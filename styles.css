@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--light-background-color: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+--Neutral-900:hsl(227, 75%, 14%);
+ --Neutral-700: hsl(225, 23%, 24%);
+--Neutral-600: hsl(226, 11%, 37%);
+--Neutral-300: hsl(0, 0%, 78%);
+--Neutral-200: hsl(217, 61%, 90%);
+--Neutral-100: hsl(0, 0%, 93%);
+--Neutral-0: hsl(200, 60%, 99%);
+--Red-400: hsl(3, 86%, 64%);
+--Red-500: hsl(3, 71%, 56%);
+--Red-700:hsl(3, 77%, 44%);
+}
+
+
+
+html{
+    font-size: 10px;
+
+}
+
+:root[dark-theme="light"]{
+ --background-color:linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);   
+--logo-section-background:hsl(200, 60%, 99%);
+--extension-btn-bgc:hsl(200,60%,99%);
+--extension-bgc:hsl(200,60%,99%);
+--logo-section-box-shadow:4px 1px 4px hsl(217, 61%, 90%);
+--extension-box-shadow: 4px 1px 4px hsl(217, 61%, 90%); 
+--heading-text-color:hsl(227, 75%, 14%);
+--text-color:hsl(200, 60%, 99%);
+--btn-text-color:hsl(227, 75%, 14%);
+--btn-background-color:hsl(200,60%,99%);
+--toggle-btn-background-color: hsl(0, 0%, 93%);
+}
+:root[data-theme="dark"]{
+--background-color:linear-gradient(180deg, #040918 0%, #091540 100%);
+--logo-section-background: hsl(225, 23%, 24%);
+--extension-btn-bgc:hsl(225,23%,24%);
+--extension-bgc:hsl(225, 23%, 24%);
+--logo-section-box-shadow:none;
+--extension-box-shadow: none; 
+--heading-text-color:hsl(200, 60%, 99%);
+---text-color:hsl(0, 0%, 78%);
+--btn-text-color:hsl(0, 0%, 93%);;
+--btn-background-color:hsl(225, 23%, 24%);
+--toggle-btn-background-color:hsl(226, 11%, 37%);;
+}
+
+
+
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url(https://fonts.google.com/noto/specimen/Noto+Sans);
+    font-weight: 400 700;
+}
+body{
+background:var(--background-color);
+font-family:"Noto Sans",sans-serif;
+}
+
+@media screen and (max-width:640px) {
+    .main-container{
+    
+    padding: 0px 0px;
+margin: auto;
+}
+
+.header{
+    width: 100%;
+    
+}
+.extesnio-list{
+    width: 100%;
+    margin: 3rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px
+}
+
+
+
+}
+.main-container{
+    height: auto;
+    padding: 2rem 9rem;
+    margin: 1px auto;
+
+}
+.header{
+width: calc(100% - 9rem);
+margin: 0 auto;
+min-width: 400px;
+
+}
+
+.logo-section{
+    
+   padding: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+ border-radius: 13px;   
+ background-color: var(--logo-section-background);
+ box-shadow: var(--extension-box-shadow);
+}
+.extension-logo{
+color:white
+}
+
+.extension-list-heading{
+color: var(--heading-text-color);
+    font-weight: 700;
+}
+
+.theme-swithcher-btn{
+    width: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+}
+.theme-swithcher-btn:hover{
+    background-color: var(--Neutral-300);
+}
+.theme-swithcher-btn:focus{
+border: none;
+outline: 1.6px solid hsl(3, 71%, 56%);
+}
+.extesnio-list{
+
+    width: 100%;
+display: flex;
+justify-content: space-between;
+
+margin: 3rem 0 2rem 0;
+}
+.extension-btn-container{
+    display: flex;
+
+justify-content: space-between;
+min-width:4rem;
+width: 21rem;
+}
+.extension-btn{
+    margin-right: 8px;
+ border: none;   
+ border-radius: 15px;
+ padding: 10px;
+ background-color: var(--extension-btn-bgc);
+cursor: pointer;
+color: var(--btn-text-color);
+text-align: center;
+line-height: 1.2rem;
+}
+.extension-btn.current-btn{
+    background-color: var(--Red-700);
+    color: var(--Neutral-0);
+    
+}
+
+
+.extension-btn.current-btn:hover{
+     background-color: var(--Red-400);
+}
+
+.extension-btn:focus{
+     outline: 2px solid var(--Red-400);
+}
+.extension-btn:hover{
+    background-color:var(--Neutral-10) ;
+}
+.extension-list-heading{
+    text-align: center;
+    font-size: 2.6rem;
+
+}
+
+.extensions-container{
+padding: 2px;
+width: calc(100% - 9rem);
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+row-gap: 10px;
+column-gap: 9px;
+margin-bottom: 20px;
+
+margin: 2px auto;
+height: auto;
+}
+.extension{
+    box-shadow: var(--extension-box-shadow); 
+    min-width: 30rem;
+    width: 32rem;
+    font-size:1.6rem;
+    padding: 1.2rem;
+    background-color: var(--extension-bgc);
+    border-radius: 13px;
+
+    height: 17.6rem;
+}
+
+.extensions-heading{
+    margin-bottom: 6px;
+    color: var(--heading-text-color);
+    font-weight: 700;
+}
+
+.image-text-container{
+    display: flex;
+    gap: 15px;
+}
+.extension-text{
+    font-weight: 400;
+    color: var(---text-color);
+    font-size: 1.3rem;
+}
+
+.logo-image{
+    margin-top: 12px;
+    display: block;
+    
+}
+.btn-and-input-container{
+    
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+margin-bottom: 0;
+margin-top: 50px;
+}
+.extesnions-heading-and-text{
+    margin-top: 14px;
+}
+.remove-btn{
+    background-color: var(---Neutral-0);
+    border-radius: 15px;
+    width: 83px;
+border: 1px solid var(--Neutral-300);
+color: var(--btn-text-color);
+padding: 5px;
+cursor: pointer;
+
+}
+
+.remove-btn:hover{
+    background-color: var(--Red-700);
+color: var(--Neutral-0);
+
+}
+.remove-btn:focus{
+    outline: 1px solid var(--Red-400);
+    
+}
+
+.on-and-of-extension-btn{
+   
+    border-radius: 12px;
+    width: 4.5rem;
+
+height: 2rem;
+position: relative;
+cursor: pointer;
+display: block;
+border: none;
+outline: none;
+}
+.on-and-of-extension-btn.false{
+      background-color: var(--toggle-btn-background-color); 
+}
+.on-and-of-extension-btn.true{
+    background-color: var(--Red-700); 
+}
+
+.on-and-of-extension-btn:focus{
+    outline: 2px solid var(--toggle-btn-background-color);
+}
+.on-and-of-extension-btn.true:hover{
+ background-color: var(--Red-400);
+
+}
+
+.toggle-background{
+    display: block;
+    position: absolute;
+    background-color: var(--Neutral-0);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top:2px;
+    left: 1.7px;
+    
+}
+.on-and-of-extension-btn:not(.on-and-of-extension-btn.true) .toggle-background{
+      left: calc(4.5rem - 17px);
+}
+.footer{
+    display: block;
+    width: 100%;
+    height: 4rem;
+
+}
+.footer p{
+    margin-bottom: 2px;
+    font-size: 1.3rem;
+
+}
+.footer a{
+
+    text-decoration: none;
+    color: var(--Red-500);
+    display: inline-block;
+
+}

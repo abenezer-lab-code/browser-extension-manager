@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -7,74 +7,37 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Browser extensions manager UI</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-
-  Extensions List
-
-  All
-  Active
-  Inactive
-
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-  DevLens
-  Quickly inspect page layouts and visualize element boundaries.
-  Remove
-
-  StyleSpy
-  Instantly analyze and copy CSS from any webpage element.
-  Remove
-
-  SpeedBoost
-  Optimizes browser resource usage to accelerate page loading.
-  Remove
-
-  JSONWizard
-  Formats, validates, and prettifies JSON responses in-browser.
-  Remove
-
-  TabMaster Pro
-  Organizes browser tabs into groups and sessions.
-  Remove
-
-  ViewportBuddy
-  Simulates various screen resolutions directly within the browser.
-  Remove
-
-  Markup Notes
-  Enables annotation and notes directly onto webpages for collaborative debugging.
-  Remove
-
-  GridGuides
-  Overlay customizable grids and alignment guides on any webpage.
-  Remove
-
-  Palette Picker
-  Instantly extracts color palettes from any webpage.
-  Remove
-
-  LinkChecker
-  Scans and highlights broken links on any page.
-  Remove
-
-  DOM Snapshot
-  Capture and export DOM structures quickly.
-  Remove
-
-  ConsolePlus
-  Enhanced developer console with advanced filtering and logging.
-  Remove
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <main class="main-container">
+<header class="header">
+  <div class="logo-section">
+  <img src="assets/images/logo.svg" alt="Extension" class="extension-logo"/>
+  
+  <button class="theme-swithcher-btn" aria-label="theme-switcher"><img src="assets/images/icon-moon.svg"/></button>
   </div>
+  <div class="extesnio-list">
+    <h2 class="extension-list-heading dark">Extensions List</h2>
+    <div class="extension-btn-container">
+  <button class="extension-btn current-btn all" aria-pressed="true" id="all">All</button>
+  <button  class="extension-btn active" aria-pressed="false" id="active">Active</button>
+  <button  class="extension-btn inactive" aria-pressed="false" id="inactive">Inactive</button>
+  </div>
+  </div>
+</header>
+  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+<section class="extensions-container">
+ 
+</section>
+  
+  </div>
+  </main>
+  <footer class="footer">
+<div class="attribution">
+ <P>Challenge by   <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. </P>
+<p> Coded by    <a href="#">Abenezer Adisu</a>.</p>
+ </footer>
+  <script src="script.js"></script>
 </body>
 </html>
