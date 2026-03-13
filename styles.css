@@ -21,11 +21,11 @@
 
 
 html{
-    font-size: 10px;
+    font-size: 62.5%;
 
 }
 
-:root[dark-theme="light"]{
+:root[data-theme="light"]{
  --background-color:linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);   
 --logo-section-background:hsl(200, 60%, 99%);
 --extension-btn-bgc:hsl(200,60%,99%);
@@ -37,6 +37,7 @@ html{
 --btn-text-color:hsl(227, 75%, 14%);
 --btn-background-color:hsl(200,60%,99%);
 --toggle-btn-background-color: hsl(0, 0%, 93%);
+--border:none;
 }
 :root[data-theme="dark"]{
 --background-color:linear-gradient(180deg, #040918 0%, #091540 100%);
@@ -44,12 +45,13 @@ html{
 --extension-btn-bgc:hsl(225,23%,24%);
 --extension-bgc:hsl(225, 23%, 24%);
 --logo-section-box-shadow:none;
---extension-box-shadow: none; 
+--extension-box-shadow: none;
 --heading-text-color:hsl(200, 60%, 99%);
 ---text-color:hsl(0, 0%, 78%);
 --btn-text-color:hsl(0, 0%, 93%);;
 --btn-background-color:hsl(225, 23%, 24%);
---toggle-btn-background-color:hsl(226, 11%, 37%);;
+--toggle-btn-background-color:hsl(226, 11%, 37%);
+--border:0.1rem solid hsl(226, 11%, 37%);
 }
 
 
@@ -196,6 +198,7 @@ margin-bottom: 20px;
 
 margin: 2px auto;
 height: auto;
+
 }
 .extension{
     box-shadow: var(--extension-box-shadow); 
@@ -205,7 +208,7 @@ height: auto;
     padding: 1.2rem;
     background-color: var(--extension-bgc);
     border-radius: 13px;
-
+border: var(--border);
     height: 17.6rem;
 }
 

@@ -7,6 +7,12 @@ const bodyElement = document.querySelector("body");
 const logoSection = document.querySelector(".logo-section");
 const extensionListHeading = document.querySelector(".extension-list-heading");
 const extensionFilterBtn = document.querySelectorAll(".extension-btn");
+// hadling theme swithc 
+const handleTheme = ()=>{
+
+
+    
+}
 
 
 
