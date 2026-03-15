@@ -8,14 +8,37 @@ const logoSection = document.querySelector(".logo-section");
 const extensionListHeading = document.querySelector(".extension-list-heading");
 const extensionFilterBtn = document.querySelectorAll(".extension-btn");
 // hadling theme swithc 
-const handleTheme = ()=>{
+const localStorageTheme = localStorage.getItem("theme")
+const systemSettingDark = window.matchMedia("(preferes-color-scheme:dark)")
+const systemSettingLight = window.matchMedia("(preferes-color-scheme:light)");
+const themeSwithcerBtn = document.querySelector("[data-theme-toggle]");
 
-
-    
+const caculateSettingAsThemeSting = (localStoragetheme,systemSetting)=>{
+if(localStoragetheme!==null){
+    return localStoragetheme;
+}
+if(systemSetting.matches){
+    return "dark";
+}
+else{
+    return "light";
 }
 
 
+}
+let currentThemeSetting = caculateSettingAsThemeSting(localStorageTheme,systemSettingDark)
+themeSwithcerBtn.addEventListener("click",()=>{
 
+console.log(caculateSettingAsThemeSting(localStorageTheme,systemSettingDark))
+console.log(currentThemeSetting)
+const newtheme = currentThemeSetting === "dark"?"light":"dark";
+const newCta = newtheme==="dark"?"change to light theme":"change to dark theme";
+themeSwithcerBtn.setAttribute("aria-lable",newCta)
+document.querySelector("html").setAttribute("data-theme",newtheme)
+
+localStorage.setItem("theme",newtheme)
+currentThemeSetting = newtheme
+})
 const getExtesnionsFromJSON = async function(){
     try{
 const response = await fetch("data.json");
@@ -141,22 +164,29 @@ if(e.target.classList.contains("true")){
 
 e.target.classList.remove("true")
 e.target.classList.add("false")
-
+setTimeout(()=>{
 extensions[indexOfModied].isActive = false;
 localStorage.setItem("extensions",JSON.stringify(extensions))
  
   renderToHtml(current)
+},600)
+
 }
 else{
 e.target.classList.remove("false")
 e.target.classList.add("true") 
+setTimeout(()=>{
 extensions[indexOfModied].isActive = true;
 localStorage.setItem("extensions",JSON.stringify(extensions))
 renderToHtml(current)
+
+},600)
+
 }
 }
 
 })
+
 extensionFilterBtn.forEach(btn=>{
     btn.addEventListener("click",(e)=>{
 

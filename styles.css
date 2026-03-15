@@ -66,13 +66,36 @@ body{
 background:var(--background-color);
 font-family:"Noto Sans",sans-serif;
 }
+.extensions-container{
+padding: 2px;
+min-width: calc(100% - 9rem);
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+row-gap: 10px;
+column-gap: 9px;
+margin-bottom: 20px;
+min-height: 100%;
+margin: 2px auto;
 
-@media screen and (max-width:640px) {
+
+}
+
+
+
+
+@media  (max-width:640px) {
+.extensions-container{
+
+display: grid;
+
+grid-template-columns:1fr;
+
+    }
     .main-container{
     
     padding: 0px 0px;
 margin: auto;
-}
+    }
 
 .header{
     width: 100%;
@@ -84,15 +107,15 @@ margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap:10px
+    justify-content:center;
+    gap:10px;
 }
 
 
 
 }
 .main-container{
-    height: auto;
+   min-height: 100vh;
     padding: 2rem 9rem;
     margin: 1px auto;
 
@@ -115,12 +138,14 @@ min-width: 400px;
  box-shadow: var(--extension-box-shadow);
 }
 .extension-logo{
-color:white
+color:white;
+
 }
 
 .extension-list-heading{
 color: var(--heading-text-color);
     font-weight: 700;
+
 }
 
 .theme-swithcher-btn{
@@ -162,6 +187,8 @@ cursor: pointer;
 color: var(--btn-text-color);
 text-align: center;
 line-height: 1.2rem;
+height: 40px;
+transition: all 0.1s linear;
 }
 .extension-btn.current-btn{
     background-color: var(--Red-700);
@@ -186,20 +213,7 @@ line-height: 1.2rem;
 
 }
 
-.extensions-container{
-padding: 2px;
-width: calc(100% - 9rem);
-display: flex;
-justify-content: space-evenly;
-flex-wrap: wrap;
-row-gap: 10px;
-column-gap: 9px;
-margin-bottom: 20px;
 
-margin: 2px auto;
-height: auto;
-
-}
 .extension{
     box-shadow: var(--extension-box-shadow); 
     min-width: 30rem;
@@ -209,7 +223,9 @@ height: auto;
     background-color: var(--extension-bgc);
     border-radius: 13px;
 border: var(--border);
-    height: 17.6rem;
+    height: 19rem;
+flex-flow: row;
+margin: auto;
 }
 
 .extensions-heading{
@@ -221,11 +237,14 @@ border: var(--border);
 .image-text-container{
     display: flex;
     gap: 15px;
+    min-height: 90px;
+    
 }
 .extension-text{
     font-weight: 400;
     color: var(---text-color);
     font-size: 1.3rem;
+    max-height: 38px;
 }
 
 .logo-image{
@@ -235,8 +254,8 @@ border: var(--border);
 }
 .btn-and-input-container{
     
-    display: flex;
-    justify-content: space-between;
+display: flex;
+justify-content: space-between;
 align-items: center;
 margin-bottom: 0;
 margin-top: 50px;
@@ -301,7 +320,7 @@ outline: none;
     border-radius: 50%;
     top:2px;
     left: 1.7px;
-    
+    transition: all 0.2s ease-in-out;
 }
 .on-and-of-extension-btn:not(.on-and-of-extension-btn.true) .toggle-background{
       left: calc(4.5rem - 17px);
