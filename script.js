@@ -7,42 +7,60 @@ const bodyElement = document.querySelector("body");
 const logoSection = document.querySelector(".logo-section");
 const extensionListHeading = document.querySelector(".extension-list-heading");
 const extensionFilterBtn = document.querySelectorAll(".extension-btn");
-// hadling theme swithc 
-const localStorageTheme = localStorage.getItem("theme")
-const systemSettingDark = window.matchMedia("(preferes-color-scheme:dark)")
-const systemSettingLight = window.matchMedia("(preferes-color-scheme:light)");
+// hadling theme swithcer 
+const themeImage =document.querySelector(".theme-image");
+ const systemSettingDark =  window.matchMedia("(prefers-color-scheme:dark)")
+
+const systemSettingLight = window.matchMedia("(prefers-color-scheme:light)");
+
 const themeSwithcerBtn = document.querySelector("[data-theme-toggle]");
 
+window.addEventListener("DOMContentLoaded",()=>{
+   
+    console.log(systemSettingLight)
+const localStorageTheme = localStorage.getItem("theme")
+const currentTheme = caculateSettingAsThemeSting(localStorageTheme,systemSettingDark)
+
+const newCta = currentTheme==="dark"?"change to light theme":"change to dark theme";
+themeSwithcerBtn.setAttribute("aria-lable",newCta)
+document.querySelector("html").setAttribute("data-theme",currentTheme)
+themeImage.src= newtheme === "dark"?"assets/images/icon-sun.svg":"assets/images/icon-moon.svg"
+
+})
+
 const caculateSettingAsThemeSting = (localStoragetheme,systemSetting)=>{
+
 if(localStoragetheme!==null){
     return localStoragetheme;
 }
 if(systemSetting.matches){
     return "dark";
 }
-else{
     return "light";
+
 }
 
 
-}
-let currentThemeSetting = caculateSettingAsThemeSting(localStorageTheme,systemSettingDark)
 themeSwithcerBtn.addEventListener("click",()=>{
-
-console.log(caculateSettingAsThemeSting(localStorageTheme,systemSettingDark))
-console.log(currentThemeSetting)
+    
+console.log(systemSettingDark)
+const localStorageTheme = localStorage.getItem("theme")
+let currentThemeSetting = caculateSettingAsThemeSting(localStorageTheme,systemSettingDark)
 const newtheme = currentThemeSetting === "dark"?"light":"dark";
 const newCta = newtheme==="dark"?"change to light theme":"change to dark theme";
 themeSwithcerBtn.setAttribute("aria-lable",newCta)
 document.querySelector("html").setAttribute("data-theme",newtheme)
-
+themeImage.src= newtheme === "dark"?"assets/images/icon-sun.svg":"assets/images/icon-moon.svg"
 localStorage.setItem("theme",newtheme)
-currentThemeSetting = newtheme
+
 })
+
+
 const getExtesnionsFromJSON = async function(){
     try{
 const response = await fetch("data.json");
 const extensionData= await response.json();
+populatePage( extensionContainer,extensionData)
 localStorage.setItem("extensions",JSON.stringify(extensionData))
 console.log(extensionData)
     }
@@ -111,9 +129,7 @@ else{
 
 const renderToHtml = (type)=>{
 
-
 const extensions = retriveExtensionsFromLocalStorage();
-
 
 if(extensions !== undefined){
  const filtered = filterEextensions(type,extensions)
@@ -124,7 +140,7 @@ if(extensions !== undefined){
 else{
 
 getExtesnionsFromJSON()
-return renderToHtml()
+
 
 }
 } 

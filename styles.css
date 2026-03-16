@@ -79,26 +79,38 @@ margin: 2px auto;
 
 
 }
-
+.image-contanier{
+    position: relative;
+}
+.dark-extension-logo-text{
+    font-size: 2.6rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-weight: 700;
+transform: translate(-30%,-50%);
+color:var(--heading-text-color) ;
+background-color:var(--extension-bgc) ;
+}
 
 
 
 @media  (max-width:640px) {
 .extensions-container{
-
+min-width: 39.7rem;
 display: grid;
 
 grid-template-columns:1fr;
 
     }
     .main-container{
-    
+    max-width: 50.06rem;
     padding: 0px 0px;
-margin: auto;
+
     }
 
 .header{
-    width: 100%;
+    width: 90%;
     
 }
 .extesnio-list{
@@ -153,7 +165,7 @@ color: var(--heading-text-color);
     border-radius: 10px;
     border: none;
     cursor: pointer;
-
+background-color: var(--btn-background-color);
 }
 .theme-swithcher-btn:hover{
     background-color: var(--Neutral-300);
