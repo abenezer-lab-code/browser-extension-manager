@@ -65,19 +65,21 @@ html{
 body{
 background:var(--background-color);
 font-family:"Noto Sans",sans-serif;
+overflow-x: hidden;
 }
 .extensions-container{
 padding: 2px;
 min-width: calc(100% - 9rem);
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
-row-gap: 10px;
-column-gap: 9px;
+row-gap: 9px;
 margin-bottom: 20px;
 min-height: 100%;
 margin: 2px auto;
+width: 50rem;
 
-
+justify-content: center;
+align-items: center;
 }
 .image-contanier{
     position: relative;
@@ -95,40 +97,10 @@ background-color:var(--extension-bgc) ;
 
 
 
-@media  (max-width:640px) {
-.extensions-container{
-min-width: 39.7rem;
-display: grid;
 
-grid-template-columns:1fr;
-
-    }
-    .main-container{
-    max-width: 50.06rem;
-    padding: 0px 0px;
-
-    }
-
-.header{
-    width: 90%;
-    
-}
-.extesnio-list{
-    width: 100%;
-    margin: 3rem 0 2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    gap:10px;
-}
-
-
-
-}
 .main-container{
    min-height: 100vh;
-    padding: 2rem 9rem;
+    padding: 2rem 1rem;
     margin: 1px auto;
 
 }
@@ -179,19 +151,23 @@ outline: 1.6px solid hsl(3, 71%, 56%);
     width: 100%;
 display: flex;
 justify-content: space-between;
-
+align-items: center;
 margin: 3rem 0 2rem 0;
 }
 .extension-btn-container{
     display: flex;
 
-justify-content: space-between;
+justify-content: space-evenly;
 min-width:4rem;
-width: 21rem;
+width: 28rem;
+
+align-items:center ;
+
 }
 .extension-btn{
     margin-right: 8px;
  border: none;   
+ display: block;
  border-radius: 15px;
  padding: 10px;
  background-color: var(--extension-btn-bgc);
@@ -199,8 +175,9 @@ cursor: pointer;
 color: var(--btn-text-color);
 text-align: center;
 line-height: 1.2rem;
-height: 40px;
+height: 38px;
 transition: all 0.1s linear;
+width: 200px;
 }
 .extension-btn.current-btn{
     background-color: var(--Red-700);
@@ -228,15 +205,15 @@ transition: all 0.1s linear;
 
 .extension{
     box-shadow: var(--extension-box-shadow); 
-    min-width: 30rem;
-    width: 32rem;
+    
+    width: 37rem;
     font-size:1.6rem;
     padding: 1.2rem;
     background-color: var(--extension-bgc);
     border-radius: 13px;
 border: var(--border);
     height: 19rem;
-flex-flow: row;
+
 margin: auto;
 }
 
@@ -316,7 +293,7 @@ outline: none;
 }
 
 .on-and-of-extension-btn:focus{
-    outline: 2px solid var(--toggle-btn-background-color);
+    border: 2px solid var(--Red-700);
 }
 .on-and-of-extension-btn.true:hover{
  background-color: var(--Red-400);
@@ -334,24 +311,43 @@ outline: none;
     left: 1.7px;
     transition: all 0.2s ease-in-out;
 }
+
 .on-and-of-extension-btn:not(.on-and-of-extension-btn.true) .toggle-background{
       left: calc(4.5rem - 17px);
 }
-.footer{
-    display: block;
+@media  (max-width:640px) {
+.extensions-container{
+min-width: 39.7rem;
+display: grid;
+
+grid-template-columns:1fr;
+
+    }
+    .main-container{
+    max-width: 50.06rem;
+    padding: 9px 0px;
+margin: auto;
+
+    }
+
+.header{
+    width: 90%;
+    
+}
+.extesnio-list{
     width: 100%;
-    height: 4rem;
-
+    margin: 3rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap:10px;
+    
 }
-.footer p{
-    margin-bottom: 2px;
-    font-size: 1.3rem;
 
+.extension{
+    width: 28rem;
+    
 }
-.footer a{
-
-    text-decoration: none;
-    color: var(--Red-500);
-    display: inline-block;
 
 }

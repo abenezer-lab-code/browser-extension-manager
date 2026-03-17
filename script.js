@@ -16,19 +16,18 @@ const systemSettingLight = window.matchMedia("(prefers-color-scheme:light)");
 const themeSwithcerBtn = document.querySelector("[data-theme-toggle]");
 
 window.addEventListener("DOMContentLoaded",()=>{
-   
-    console.log(systemSettingLight)
+
 const localStorageTheme = localStorage.getItem("theme")
-const currentTheme = caculateSettingAsThemeSting(localStorageTheme,systemSettingDark)
+const currentTheme = calulateSettingAsThemeSting(localStorageTheme,systemSettingDark)
 
 const newCta = currentTheme==="dark"?"change to light theme":"change to dark theme";
-themeSwithcerBtn.setAttribute("aria-lable",newCta)
+themeSwithcerBtn.setAttribute("aria-label",newCta)
 document.querySelector("html").setAttribute("data-theme",currentTheme)
-themeImage.src= newtheme === "dark"?"assets/images/icon-sun.svg":"assets/images/icon-moon.svg"
+themeImage.src= currentTheme === "dark"?"assets/images/icon-sun.svg":"assets/images/icon-moon.svg"
 
 })
 
-const caculateSettingAsThemeSting = (localStoragetheme,systemSetting)=>{
+const calulateSettingAsThemeSting = (localStoragetheme,systemSetting)=>{
 
 if(localStoragetheme!==null){
     return localStoragetheme;
@@ -45,10 +44,10 @@ themeSwithcerBtn.addEventListener("click",()=>{
     
 console.log(systemSettingDark)
 const localStorageTheme = localStorage.getItem("theme")
-let currentThemeSetting = caculateSettingAsThemeSting(localStorageTheme,systemSettingDark)
+let currentThemeSetting = calulateSettingAsThemeSting(localStorageTheme,systemSettingDark)
 const newtheme = currentThemeSetting === "dark"?"light":"dark";
 const newCta = newtheme==="dark"?"change to light theme":"change to dark theme";
-themeSwithcerBtn.setAttribute("aria-lable",newCta)
+themeSwithcerBtn.setAttribute("aria-label",newCta)
 document.querySelector("html").setAttribute("data-theme",newtheme)
 themeImage.src= newtheme === "dark"?"assets/images/icon-sun.svg":"assets/images/icon-moon.svg"
 localStorage.setItem("theme",newtheme)
