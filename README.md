@@ -30,28 +30,27 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
-
-![](./screenshot.)
 
 
 - Solution URL: [solution ](https://github.com/abenezer-lab-code/browser-extension-manager.git)
 - Live Site URL: [ live site](https://abenezer-lab-code.github.io/browser-extension-manager/)
 
-## My process
 
 ### Built with
 
 - Semantic HTML5 markup for accessibility and readibility
 - CSS custom properties
 - Flexbox
-- 
+- css grid
+- i use asyn to fetch data from json
+- i also use local storage
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-in this project i learn how to work with data dynamicly, and i also learn how to update theme color based on window backgroud color.
+-In this project, I learned how to work with data dynamically. I also learned how to update the theme color based on the system (window) background color.
+- The second thing I learned is how to make a website responsive using Grid and Flexbox.
+### my favorite code
 - my favorite code 
 ```html
 <html data-theme="light"></html>
@@ -77,20 +76,15 @@ themeImage.src= currentTheme === "dark"?"assets/images/icon-sun.svg":"assets/ima
 
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+in future project i will learn more about responsive design.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [ resource ](https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f) - This is an excellent article that helped me clearly understand how to implement a theme toggle. I’d highly recommend it to anyone who is still learning how to build a theme switcher.
 
 **
 ### AI Collaboration
@@ -101,7 +95,6 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Abenezer Adisu](https://www.your-site.com)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Twitter - [@yourusername](https://www.twitter.com/@abenezerforcode)
 

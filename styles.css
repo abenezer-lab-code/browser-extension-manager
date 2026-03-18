@@ -319,7 +319,7 @@ outline: none;
 }
 @media  (max-width:640px) {
 .extensions-container{
-grid-template-columns: 0.5fr;
+grid-template-columns: 28rem;
 align-items: center;
 justify-content: center;
 padding: 0px;
@@ -333,7 +333,7 @@ overflow: hidden;
 
 .header{
   width: 100%;
-  margin: 0;
+padding: 6px;
 }
 .extesnio-list{
     margin:auto;
@@ -347,10 +347,15 @@ grid-template-rows: 1fr 1fr;
     gap:10px;
     align-items: center;
 }
-.extension-btn-container{
-    
-    
+
 }
+@media (min-width:640px ) and (max-width:1024px){
+    .extensions-container{
+grid-template-columns: 1fr 1fr;
+align-items: center;
+justify-content: center;
+padding: 0px;
+width: 100%;
 
-
+    }
 }
