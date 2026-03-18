@@ -319,7 +319,7 @@ outline: none;
 }
 @media  (max-width:640px) {
 .extensions-container{
-grid-template-columns: 28rem;
+grid-template-columns: 33rem;
 align-items: center;
 justify-content: center;
 padding: 0px;
