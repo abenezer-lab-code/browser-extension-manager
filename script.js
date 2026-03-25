@@ -42,7 +42,6 @@ if(systemSetting.matches){
 
 themeSwithcerBtn.addEventListener("click",()=>{
     
-console.log(systemSettingDark)
 const localStorageTheme = localStorage.getItem("theme")
 let currentThemeSetting = calulateSettingAsThemeSting(localStorageTheme,systemSettingDark)
 const newtheme = currentThemeSetting === "dark"?"light":"dark";
@@ -77,7 +76,7 @@ const populatePage = (page,data)=>
 page.innerHTML=""
 data.forEach(({logo,name,description,isActive})=>{
 page.innerHTML+=`
- <div class="extension" id="${name}">
+ <article class="extension" id="${name.replace(" ","-")}">
     <div class="image-text-container">
       <img src="${logo}" class="logo-image" aria-hidden="true" loading="lazy"/>
  <div class="extesnions-heading-and-text">
@@ -92,7 +91,7 @@ page.innerHTML+=`
 <span class="toggle-background"></span>
  </button>
  </div>
-</div>
+</article>
 
 
 `
@@ -107,7 +106,7 @@ const extensions = localStorage.getItem("extensions");
 if(extensions!==null){
 return JSON.parse(extensions)
 }
-return undefined
+
 
 }
 
@@ -146,33 +145,31 @@ getExtesnionsFromJSON()
 renderToHtml()
 
 
-//filter 
-
-
-//remove 
 const removeExtension = (id)=>{
+    const isExtensionRemoved = confirm("do yo want to remove this extension.")
+    if(isExtensionRemoved){
 const extensions = retriveExtensionsFromLocalStorage();
 
-const name = extensions.findIndex(e=>e.name===id);
+const name = extensions.findIndex(e=>e.name===id.replace("-"," "));
 extensions.splice(name,1);
 localStorage.setItem("extensions",JSON.stringify(extensions))
 const element = document.getElementById(id);
 
 element.remove()
+    }
 }
 
 extensionContainer.addEventListener("click",e=>{
-
+const id = e.target.parentElement.parentElement.id.replace("-"," ")
 if(e.target.className==="remove-btn"){
-console.log(e.target.parentElement.parentElement)
-removeExtension(e.target.parentElement.parentElement.id)
+    removeExtension(id)
 
 }
 if(e.target.classList.contains("on-and-of-extension-btn")){
 const extensions = retriveExtensionsFromLocalStorage();
-const id = e.target.parentElement.parentElement.id;
+//const id = e.target.parentElement.parentElement.id;
 
-const indexOfModied = extensions.findIndex(e=>e.name===id)
+const indexOfModified = extensions.findIndex(e=>e.name===id)
  const current =   [...extensionFilterBtn].filter(e=>e.classList.contains("current-btn"))[0].id;
  
 if(e.target.classList.contains("true")){
@@ -180,7 +177,7 @@ if(e.target.classList.contains("true")){
 e.target.classList.remove("true")
 e.target.classList.add("false")
 setTimeout(()=>{
-extensions[indexOfModied].isActive = false;
+extensions[indexOfModified].isActive = false;
 localStorage.setItem("extensions",JSON.stringify(extensions))
  
   renderToHtml(current)
@@ -191,7 +188,7 @@ else{
 e.target.classList.remove("false")
 e.target.classList.add("true") 
 setTimeout(()=>{
-extensions[indexOfModied].isActive = true;
+extensions[indexOfModified].isActive = true;
 localStorage.setItem("extensions",JSON.stringify(extensions))
 renderToHtml(current)
 
@@ -208,10 +205,12 @@ extensionFilterBtn.forEach(btn=>{
 renderToHtml(btn.id)
 
 extensionFilterBtn.forEach(e=>{
+e.setAttribute("aria-current",false)
   e.classList.remove("current-btn")
 })
 btn.classList.add("current-btn")
-
+btn.setAttribute("aria-current",true)
+console.log(btn.classList,btn.ariaCurrent)
     })
 })
 

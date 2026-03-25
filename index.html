@@ -13,22 +13,22 @@
   <main class="main-container">
 <header class="header">
   <div class="logo-section">
-  <div class="image-contanier">
-  <img src="assets/images/logo.svg" alt="Extension" class="extension-logo"/>
+  <div class="image-container">
+  <img src="assets/images/logo.svg" alt="Extension logo" class="extension-logo"/>
   <h1 class="dark-extension-logo-text">Extensions</h1>
   </div>
-  <button class="theme-swithcher-btn" data-theme-toggle aria-label="theme-switcher"><img src="assets/images/icon-moon.svg" class="theme-image"/></button>
+  <button class="theme-switcher-btn" data-theme-toggle aria-label=""><img src="assets/images/icon-moon.svg" class="theme-image" aria-hidden="true"/></button>
   </div>
-  <div class="extesnio-list">
+  <section class="extension-list">
     <h2 class="extension-list-heading dark">Extensions List</h2>
-    <div class="extension-btn-container">
-  <button class="extension-btn current-btn all" aria-pressed="true" id="all">All</button>
-  <button  class="extension-btn active" aria-pressed="false" id="active">Active</button>
-  <button  class="extension-btn inactive" aria-pressed="false" id="inactive">Inactive</button>
-  </div>
-  </div>
+    <ul class="extension-btn-container">
+  <li><button class="extension-btn current-btn all" aria-current="true" id="all">All</button></li>
+ <li><button  class="extension-btn active" id="active">Active</button></li>
+ <li><button  class="extension-btn inactive"  id="inactive">Inactive</button></li>
+    </ul>
+  </section>
 </header>
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+ 
 <section class="extensions-container">
  
 </section>
